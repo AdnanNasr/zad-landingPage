@@ -1,5 +1,5 @@
 import { Smartphone, Mail } from 'lucide-react';
-import { FaGooglePlay, FaApple, FaGithub, FaFacebookF } from 'react-icons/fa';
+import {  FaApple, FaGithub, FaFacebookF } from 'react-icons/fa';
 import { colors, links } from '../data/siteData';
 
 export default function Footer() {
