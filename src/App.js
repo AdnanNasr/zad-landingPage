@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import IntroSection from './components/Intro';
+import Features from './components/Features';
+import Screenshots from './components/Screenshots';
+import WhyZad from './components/WhyZad';
+import MissionMessage from './components/MissionMessage';
+import Privacy from './components/Privacy';
+import Stats from './components/Stats';
+import GithubSection from './components/Github';
+import FAQ from './components/FAQ';
+import DownloadCTA from './components/Download';
+import Footer from './components/Footer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(
+  <div>
+    {/* <Zad/> */}
+    <Navbar/>
+    <Hero/>
+    <Stats/>
+    <IntroSection/>
+    <Features/>
+    <Screenshots/>
+    <WhyZad/>
+    <div className="p-20 islamic-pattern"  style={{ backgroundColor: '#fff' }}>
+    <MissionMessage/>
+    <Privacy/>
     </div>
+    <GithubSection/>
+    <FAQ/>
+    <DownloadCTA/>
+    <Footer/>
+  </div>
   );
 }
 
