@@ -7,7 +7,7 @@ export default function WhyZad() {
 
         <div className="text-center max-w-xl mx-auto mb-14">
           <span className="text-sm font-bold" style={{ color: colors.secondary }}>لماذا زاد المسلم؟</span>
-          <h2 className="text-3xl font-bold mt-3 text-white">مبني على الثقة والبساطة</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3 text-white">مبني على الثقة والبساطة</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">

@@ -73,14 +73,14 @@ export const features = [
 ];
 
 export const screenshots = [
-  { title: "الصفحة الرئيسية", src: "/images.png" },
-  { title: "مواقيت الصلاة", src: null },
-  { title: "القرآن الكريم", src: null },
-  { title: "الأحاديث", src: null },
-  { title: "القرآن المرتل والصوتيات", src: null },
-  { title: "اتجاه القبلة", src: null },
-  { title: "الإعدادات", src: null },
-  { title: "الوضع الداكن", src: null },
+  { title: "الصفحة الرئيسية", src: "/home_page.png" },
+  { title: "مواقيت الصلاة", src: "/pray_times.png" },
+  { title: "القرآن الكريم", src: "/quran_page.png" },
+  { title: "الأحاديث", src: "/hadith_page.png" },
+  { title: "القرآن المرتل والصوتيات", src: "/quran_voice_page.png" },
+  { title: "اتجاه القبلة", src: "/qibla_page.png" },
+  { title: "الإعدادات", src: "/settings_page.png" },
+  { title: "الوضع الداكن", src: "/home_page_darkmode_green_theme.png" },
 ];
  
 export const whyPoints = [
@@ -105,6 +105,6 @@ export const faqs = [
   { q: "كيف يمكنني الإبلاغ عن مشكلة؟", a: "عبر مراسلة المطور من صفحة التطبيق في المتجر، أو إنشاء Issue في مستودع GitHub." },
 ];
 
-export const qrCodeSrc = null; // غيّريها لـ "/qr-code.png" لما توصلك من عدنان
+export const qrCodeSrc = "/qr-code.svg";  
 
 export {CheckCircle2};

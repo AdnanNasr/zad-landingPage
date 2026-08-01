@@ -1,9 +1,10 @@
 import { FaGithub } from 'react-icons/fa';
 import { colors, links } from '../data/siteData';
+import {ArrowUpLeft} from "lucide-react";
 
 export default function GithubSection() {
   return (
-    <section className="py-20" style={{ background: colors.bg }}>
+    <section id="Github" className="py-20" style={{ background: colors.bg }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center max-w-xl mx-auto mb-10">
@@ -18,22 +19,33 @@ export default function GithubSection() {
           style={{ background: colors.primaryDark }}
         >
 
-          <div className="flex items-start justify-end gap-4 text-right order-1 md:order-2">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-end gap-5 text-center md:text-right order-1 md:order-2">
+
+          <div className="flex items-start gap-4">
             <FaGithub size={36} color="#fff" className="flex-none mt-1" />
+
             <div>
-              <h3 className="text-lg font-bold text-white mb-2">مشروع مفتوح المصدر بالكامل</h3>
+              <h3 className="text-lg font-bold text-white mb-2">
+                مشروع مفتوح المصدر بالكامل
+              </h3>
+
               <p className="text-sm text-white/70 leading-relaxed">
                 يمكنك الاطلاع على الكود، اقتراح تحسينات، أو المساهمة مباشرة في تطوير التطبيق عبر GitHub.
               </p>
             </div>
-            <a
+          </div>
+
+          <a
             href={links.github}
-            className="flex-none rounded-full px-6 py-3 font-bold text-sm absolute left-5 md:left-8 top-1/2 -translate-y-1/2 order-2 md:order-1"
+            className="rounded-full px-6 py-3 font-bold text-sm md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2"
             style={{ background: '#fff', color: colors.primaryDark }}
           >
-              زيارة المستودع  ↗   
+            زيارة المستودع 
+            <ArrowUpLeft size={16} className="inline-block ml-2" />
           </a>
-          </div>
+
+        </div>
+
         </div>
 
       </div>

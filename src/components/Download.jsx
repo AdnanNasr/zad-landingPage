@@ -1,5 +1,5 @@
 import { colors, links, qrCodeSrc } from '../data/siteData';
-
+import {FaGooglePlay} from "react-icons/fa"
 export default function DownloadCTA() {
   return (
     <section
@@ -55,7 +55,8 @@ export default function DownloadCTA() {
               boxShadow:` 0 12px 35px ${colors.secondary}55`,
             }}
           >
-            حمّل من Google Play
+            حمّل من Google Play {" "}
+            <FaGooglePlay size={24}/>
           </a>
 
           {/* QR */}

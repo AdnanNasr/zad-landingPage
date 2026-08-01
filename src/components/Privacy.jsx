@@ -15,13 +15,24 @@ export default function Privacy() {
       <div className="max-w-5xl mx-auto px-6">
 
         <div className="text-center mb-10">
-          <span className="text-sm font-bold" style={{ color: colors.secondary }}>الخصوصية والأذونات</span>
-          <h2 className="text-3xl font-bold mt-3" style={{ color: colors.primary }}>نحن نحترم خصوصيتك </h2>
+          <span className="text-sm font-bold" style={{ color: colors.secondary }}>
+            الخصوصية والأذونات
+          </span>
+          <h2
+            className="text-3xl md:text-4xl font-bold mt-3"
+            style={{ color: colors.primary }}
+          >
+            نحن نحترم خصوصيتك
+          </h2>
         </div>
 
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
-          <div className="flex justify-center" style={{ marginLeft: 'auto', marginRight: '2rem' }}>
-            <ShieldCheck size={240} color={colors.secondary} strokeWidth={1.2} />
+          <div className="flex justify-center items-center">
+            <ShieldCheck
+              className="w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-72 lg:h-72"
+              color={colors.secondary}
+              strokeWidth={1.2}
+            />
           </div>
 
           <div>
@@ -29,9 +40,15 @@ export default function Privacy() {
               <div
                 key={i}
                 className="flex items-start gap-3 py-4"
-                style={{ borderBottom: i < privacyPoints.length - 1 ? '1px solid #e5e0d0' : 'none' }}
+                style={{
+                  borderBottom: i < privacyPoints.length - 1 ? '1px solid #e5e0d0' : 'none',
+                }}
               >
-                <CheckCircle2 size={20} color={colors.primary} className="mt-0.5 flex-shrink-0" />
+                <CheckCircle2
+                  size={20}
+                  color={colors.primary}
+                  className="mt-0.5 flex-shrink-0"
+                />
                 <p style={{ color: '#444' }}>{point}</p>
               </div>
             ))}

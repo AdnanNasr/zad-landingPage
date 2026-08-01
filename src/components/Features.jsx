@@ -1,4 +1,29 @@
+import { motion } from 'framer-motion';
 import { colors, features } from '../data/siteData';
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
 
 export default function Features() {
   return (
@@ -6,30 +31,58 @@ export default function Features() {
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center max-w-xl mx-auto mb-14">
-          <span className="text-sm font-bold" style={{ color: colors.secondary }}>المزايا</span>
-          <h2 className="text-3xl font-bold mt-3" style={{ color: colors.primary }}>
-           كل ما تحتاجه في مكان واحد
+          <span
+            className="text-sm font-bold"
+            style={{ color: colors.secondary }}
+          >
+            المزايا
+          </span>
+
+          <h2
+            className="text-3xl md:text-4xl font-bold mt-3"
+            style={{ color: colors.primary }}
+          >
+            كل ما تحتاجه في مكان واحد
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <motion.div
+          className="grid sm:grid-cols-2 md:grid-cols-4 gap-5"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {features.map((f, i) => (
-            <div
+            <motion.div
               key={i}
-              className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2  hover:shadow-xl cursor-default"
-              style={{ background: colors.cream, border: `1px solid ${colors.primary}20`}}
+              variants={item}
+              className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-default"
+              style={{
+                background: colors.cream,
+                border: `1px solid ${colors.primary}20`,
+              }}
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
                 style={{ background: colors.primary }}
               >
-                <f.icon size={22} color="#fff" />
+                <f.icon size={33} color="#fff" />
               </div>
-              <h3 className="font-bold mb-2" style={{ color: colors.primary }}>{f.title}</h3>
-              <p className="text-sm" style={{ color: '#555' }}>{f.desc}</p>
-            </div>
+
+              <h3
+                className="font-bold mb-2"
+                style={{ color: colors.primary }}
+              >
+                {f.title}
+              </h3>
+
+              <p className="text-sm" style={{ color: '#555' }}>
+                {f.desc}
+              </p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

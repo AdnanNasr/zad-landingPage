@@ -26,14 +26,14 @@ export default function FAQ() {
           </span>
 
           <h2
-            className="text-4xl font-extrabold mt-4"
+            className="text-3xl md:text-4xl font-extrabold mt-4"
             style={{ color: colors.primary }}
           >
             لديك سؤال؟
           </h2>
         </div>
 
-        <div className="border-t border-[#DDD4BF]">
+        <div >
 
           {faqs.map((item, i) => (
             <div
@@ -46,7 +46,7 @@ export default function FAQ() {
               >
 
                 <span
-                  className="textlg font-bold"
+                  className="text-lg font-bold"
                   style={{ color: colors.primary }}
                 >
                   {item.q}

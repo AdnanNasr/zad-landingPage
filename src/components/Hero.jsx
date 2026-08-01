@@ -3,7 +3,7 @@ import { colors, links } from '../data/siteData';
 
 export default function Hero() {
   return (
-    <header className="relative overflow-hidden"
+    <header id="hero" className="relative overflow-hidden"
     style={{ background: "radial-gradient(40% 40% at 10% 14%, " + colors.secondaryLight + "55 0%, rgba(0,0,0,0) 70%), linear-gradient(160deg, " + colors.primaryLight + " 0%, " + colors.primary + " 50%, " + colors.primaryDark + " 100%)" }}    >
       <style>{`
       @keyframes twinkle {
@@ -80,11 +80,11 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-black text-base"
             style={{ background: colors.secondary, color: colors.primaryDark, boxShadow: "0 12px 30px -10px rgba(231,137,59,0.5)" }}
           >
-            حمّل التطبيق مجانًا
+            حمّل التطبيق الآن مجانًا
           </a>
 
           <span className="block mt-3 text-xs" style={{ color: "rgba(251,246,236,0.55)" }}>
-            متاح الآن على أندرويد
+            متاح لاجهزة Andriod وقريبا ios
           </span>
         </div>
 
@@ -97,11 +97,11 @@ export default function Hero() {
           `}</style>
 
           <div
-            className="w-64 h-[520px] rounded-[38px] p-3"
+            className="w-44 h-[360px] sm:w-56 sm:h-[460px] md: w-64 md:h-[520px] lg:w-72 lg:h-[580px] rounded-[32px] p-2 lg:p-3"
             style={{ background: "#0A1D1E", boxShadow: "0 40px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(23,107,112,0.25)" }}
           >
             <div className="w-full h-full rounded-3xl bg-white/10 flex items-center justify-center text-white/40 text-sm"style={{overflow:'hidden'}} >
-              <img src="/images.png" alt="زاد المسلم" className="w-full h-full object-cover" />
+              <img src="/home_page.png" alt="زاد المسلم" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -109,20 +109,20 @@ export default function Hero() {
           <div
             className="hidden sm:flex items-center gap-3 absolute -right-6 top-10 rounded-2xl px-4 py-3 z-20"
             style={{
-              background: colors.bg,
-              boxShadow: "0 20px 40px -15px rgba(10,53,56,0.45)",
+              background: colors.ink,
+              boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
               animation: "floatCard 5s ease-in-out infinite",
             }}
           >
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-style={{ background: colors.primary }}
+              style={{ background: colors.primary }}
             >
               <Clock size={16} color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[11px] font-bold" style={{ color: "#8a8a80" }}>الصلاة القادمة</div>
-              <div className="text-sm font-black" style={{ color: colors.primary }}>العصر · 04:41</div>
+              <div className="text-[11px] font-bold" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
+              <div className="text-sm font-black" style={{ color: "#fff" }}>العصر · 04:41</div>
             </div>
           </div>
 
@@ -130,8 +130,8 @@ style={{ background: colors.primary }}
           <div
             className="hidden sm:flex items-center gap-3 absolute -left-8 bottom-16 rounded-2xl px-4 py-3 z-20"
             style={{
-              background: colors.bg,
-              boxShadow: "0 20px 40px -15px rgba(10,53,56,0.45)",
+              background: colors.ink,
+              boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
               animation: "floatCard 6s ease-in-out infinite 1.2s",
             }}
           >
@@ -142,8 +142,8 @@ style={{ background: colors.primary }}
               <Volume2 size={16} color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[11px] font-bold" style={{ color: "#8a8a80" }}>قارئ نشط الآن</div>
-              <div className="text-sm font-black" style={{ color: colors.primary }}>مشاري العفاسي</div>
+              <div className="text-[11px] font-bold" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
+              <div className="text-sm font-black" style={{ color: "#fff" }}>مشاري العفاسي</div>
             </div>
           </div>
         </div>

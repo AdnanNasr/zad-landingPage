@@ -23,7 +23,7 @@ function App() {
     <Features/>
     <Screenshots/>
     <WhyZad/>
-    <div className="p-20 islamic-pattern"  style={{ backgroundColor: '#fff' }}>
+    <div className="px-0 py-20 islamic-pattern"  style={{ backgroundColor: '#fff' }}>
     <MissionMessage/>
     <Privacy/>
     </div>
