@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zad_al_muslim.adnandev.cloud/sitemap.xml
+Sitemap: https://zad-landing-pae-a83t.vercel.app/sitemap.xml

@@ -107,7 +107,7 @@ export default function Hero() {
 
           {/* كارت : الصلاة القادمة */}
           <div
-            className="flex items-center gap-2 sm:gap-3 absolute -right-3 top-6 sm:-right-6 sm:top-10 rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-4 sm:py-3 z-20"
+            className="flex items-center gap-1.5 sm:gap-3 absolute -right-16 top-2 sm:-right-6 sm:top-10 rounded-lg sm:rounded-2xl px-2 py-1.5 sm:px-4 sm:py-3 z-20 max-w-[110px] sm:max-w-none"
             style={{
               background: colors.ink,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
@@ -115,21 +115,21 @@ export default function Hero() {
             }}
           >
             <div
-              className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-5 h-5 sm:w-9 sm:h-9 rounded-md sm:rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: colors.primary }}
             >
-              <Clock size={12} className="sm:hidden" color="#fff" />
+              <Clock size={10} className="sm:hidden" color="#fff" />
               <Clock size={16} className="hidden sm:block" color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[9px] sm:text-[11px] font-bold" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
-              <div className="text-xs sm:text-sm font-black" style={{ color: "#fff" }}>العصر · 04:41</div>
+              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
+              <div className="text-[10px] sm:text-sm font-black whitespace-nowrap" style={{ color: "#fff" }}>العصر · 04:41</div>
             </div>
           </div>
 
           {/* كارت : القارئ النشط */}
           <div
-            className="flex items-center gap-2 sm:gap-3 absolute -left-4 bottom-10 sm:-left-8 sm:bottom-16 rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-4 sm:py-3 z-20"
+            className="flex items-center gap-1.5 sm:gap-3 absolute -left-16 bottom-6 sm:-left-8 sm:bottom-16 rounded-lg sm:rounded-2xl px-2 py-1.5 sm:px-4 sm:py-3 z-20 max-w-[110px] sm:max-w-none"
             style={{
               background: colors.ink,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
@@ -137,15 +137,15 @@ export default function Hero() {
             }}
           >
             <div
-              className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-5 h-5 sm:w-9 sm:h-9 rounded-md sm:rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: colors.secondary }}
             >
-              <Volume2 size={12} className="sm:hidden" color="#fff" />
+              <Volume2 size={10} className="sm:hidden" color="#fff" />
               <Volume2 size={16} className="hidden sm:block" color="#fff" />
             </div>
-            <div className="text-right">
-              <div className="text-[9px] sm:text-[11px] font-bold" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
-              <div className="text-xs sm:text-sm font-black" style={{ color: "#fff" }}>مشاري العفاسي</div>
+            <div className="text-right min-w-0">
+              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
+              <div className="text-[10px] sm:text-sm font-black " style={{ color: "#fff" }}>مشاري العفاسي</div>
             </div>
           </div>
         </div>

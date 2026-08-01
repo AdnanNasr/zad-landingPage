@@ -12,6 +12,10 @@ export const colors = {
   cream: "#EEF5F4",
 };
 
+// رابط الموقع الرسمي — بيتقرا من ملف .env (REACT_APP_SITE_URL)
+// غيّريه من هناك مش هنا
+export const siteUrl = process.env.REACT_APP_SITE_URL || "https://zad-landing-pae-a83t.vercel.app";
+
 export const links = {
   playStore: "https://play.google.com/store/apps/details?id=com.zad_al_muslim.adnan",
   github: "https://github.com/AdnanNasr/Zad_Al-Muslim",

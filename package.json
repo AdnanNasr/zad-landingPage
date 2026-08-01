@@ -16,6 +16,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "seo:generate": "node scripts/generate-seo-files.js",
+    "prestart": "npm run seo:generate",
+    "prebuild": "npm run seo:generate",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
