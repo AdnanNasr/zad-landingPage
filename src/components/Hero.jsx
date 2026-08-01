@@ -54,7 +54,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-16 grid md:grid-cols-2 gap-10 items-center text-center md:text-right relative z-10">
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-10 md:pt-32 md:pb-16 grid md:grid-cols-2 gap-6 md:gap-10 items-center text-center md:text-right relative z-10">
         <div>
           <span
             className="inline-block text-sm font-bold mb-4 px-4 py-1 rounded-full"
@@ -97,7 +97,7 @@ export default function Hero() {
           `}</style>
 
           <div
-            className="w-44 h-[360px] sm:w-56 sm:h-[460px] md: w-64 md:h-[520px] lg:w-72 lg:h-[580px] rounded-[32px] p-2 lg:p-3"
+            className="w-36 h-[290px] sm:w-56 sm:h-[460px] md:w-64 md:h-[520px] lg:w-72 lg:h-[580px] rounded-[28px] sm:rounded-[32px] p-1.5 sm:p-2 lg:p-3"
             style={{ background: "#0A1D1E", boxShadow: "0 40px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(23,107,112,0.25)" }}
           >
             <div className="w-full h-full rounded-3xl bg-white/10 flex items-center justify-center text-white/40 text-sm"style={{overflow:'hidden'}} >
@@ -107,7 +107,7 @@ export default function Hero() {
 
           {/* كارت : الصلاة القادمة */}
           <div
-            className="hidden sm:flex items-center gap-3 absolute -right-6 top-10 rounded-2xl px-4 py-3 z-20"
+            className="flex items-center gap-2 sm:gap-3 absolute -right-3 top-6 sm:-right-6 sm:top-10 rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-4 sm:py-3 z-20"
             style={{
               background: colors.ink,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
@@ -115,20 +115,21 @@ export default function Hero() {
             }}
           >
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: colors.primary }}
             >
-              <Clock size={16} color="#fff" />
+              <Clock size={12} className="sm:hidden" color="#fff" />
+              <Clock size={16} className="hidden sm:block" color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[11px] font-bold" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
-              <div className="text-sm font-black" style={{ color: "#fff" }}>العصر · 04:41</div>
+              <div className="text-[9px] sm:text-[11px] font-bold" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
+              <div className="text-xs sm:text-sm font-black" style={{ color: "#fff" }}>العصر · 04:41</div>
             </div>
           </div>
 
           {/* كارت : القارئ النشط */}
           <div
-            className="hidden sm:flex items-center gap-3 absolute -left-8 bottom-16 rounded-2xl px-4 py-3 z-20"
+            className="flex items-center gap-2 sm:gap-3 absolute -left-4 bottom-10 sm:-left-8 sm:bottom-16 rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-4 sm:py-3 z-20"
             style={{
               background: colors.ink,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
@@ -136,14 +137,15 @@ export default function Hero() {
             }}
           >
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: colors.secondary }}
             >
-              <Volume2 size={16} color="#fff" />
+              <Volume2 size={12} className="sm:hidden" color="#fff" />
+              <Volume2 size={16} className="hidden sm:block" color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[11px] font-bold" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
-              <div className="text-sm font-black" style={{ color: "#fff" }}>مشاري العفاسي</div>
+              <div className="text-[9px] sm:text-[11px] font-bold" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
+              <div className="text-xs sm:text-sm font-black" style={{ color: "#fff" }}>مشاري العفاسي</div>
             </div>
           </div>
         </div>
