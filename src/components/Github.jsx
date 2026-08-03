@@ -18,7 +18,7 @@ export default function GithubSection() {
 
         <div
           className="rounded-3xl px-5 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative"
-          style={{ background: colors.primary }}
+          style={{ background: "linear-gradient(155deg, #2b2f31 0%, #0d0e0f 45%, #1a1c1d 100%)" }}
         >
 
           <div className="flex flex-col md:flex-row items-center md:items-start justify-end gap-5 text-center md:text-right order-1 md:order-2">

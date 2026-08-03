@@ -6,7 +6,7 @@ export default function DownloadCTA() {
   return (
     <section
       className="relative overflow-hidden py-24 text-center"
-      style={{ background: colors.primary }}
+      style={{ background: colors.sectionAccentBg }}
     >
       {/* Background Glow */}
       <div

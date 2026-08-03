@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 export default function WhyZad() {
   const { colors } = useTheme();
   return (
-    <section id="why" className="py-20" style={{ background: colors.primary }}>
+    <section id="why" className="py-20" style={{ background: colors.sectionAccentBg }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center max-w-xl mx-auto mb-14">

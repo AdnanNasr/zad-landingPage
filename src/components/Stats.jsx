@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { stats } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
 
-// بيفصل الرقم عن أي بادئة زي "+" عشان نقدر نعدّي عليه بالأنيميشن
-// ونرجّع نفس الشكل (+30, 7,563...) في الآخر
 function parseStat(raw) {
   const prefix = raw.trim().startsWith('+') ? '+' : '';
   const target = parseInt(raw.replace(/[^0-9]/g, ''), 10) || 0;

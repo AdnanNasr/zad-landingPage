@@ -76,7 +76,7 @@ export default function Hero() {
 
           <h1
             className="text-4xl md:text-5xl font-bold mb-5 leading-tight"
-            style={{ fontFamily: "'Amiri', serif", color: colors.bg }}
+            style={{ fontFamily: "'Cairo', serif", color: colors.bg }}
           >
             كل ما يحتاجه <span style={{color:colors.secondary}}> المسلم</span><br></br>في مكان واحد
           </h1>

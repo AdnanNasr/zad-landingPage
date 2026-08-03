@@ -21,6 +21,7 @@ export const lightColors = {
   text: "#3a3a34",       
   textMuted: "#555555",   
   textFaint: "#666666",   
+  sectionAccentBg:"#176B70",
 };
 
 // ألوان الوضع الداكن
@@ -42,6 +43,7 @@ export const darkColors = {
   text: "#EDEAE0",
   textMuted: "#B9C4C3",
   textFaint: "#9AA6A5",
+  sectionAccentBg:"#17383a",
 };
 
 //  الوضع الفاتح افتراضيًا
@@ -116,7 +118,7 @@ export const screenshots = [
   { title: "مواقيت الصلاة", src: "/PrayersTime.webp", srcDark: "/prayersTime_dark.webp" },
   { title: "القرآن الكريم", src: "/quran.webp", srcDark: "/quran_dark.webp" },
   { title: "الأحاديث", src: "/sunnah&hadith.webp", srcDark: "/sunnah&hadith_dark.webp" },
-  { title: "القرآن المرتل والصوتيات", src: "/quranMurattal.webp", srcDark: "/sunnah&hadith_dark.webp" },
+  { title: "القرآن المرتل والصوتيات", src: "/quranMurattal.webp", srcDark: "/quranMurattal_dark.webp" },
   { title: "اتجاه القبلة", src: "/qibla.webp", srcDark: "/qibla_dark.webp" },
   { title: "الإعدادات", src: "/settings.webp", srcDark: "/settings_dark.webp" },
 ];
