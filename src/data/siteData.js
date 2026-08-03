@@ -113,7 +113,7 @@ export const features = [
 // صور الموقع light & dark
 export const screenshots = [
   { title: "الصفحة الرئيسية", src: "/home.webp", srcDark: "/home_dark.webp" },
-  { title: "مواقيت الصلاة", src: "/prayersTime.webp", srcDark: "/prayersTime_dark.webp" },
+  { title: "مواقيت الصلاة", src: "/PrayersTime.webp", srcDark: "/prayersTime_dark.webp" },
   { title: "القرآن الكريم", src: "/quran.webp", srcDark: "/quran_dark.webp" },
   { title: "الأحاديث", src: "/sunnah&hadith.webp", srcDark: "/sunnah&hadith_dark.webp" },
   { title: "القرآن المرتل والصوتيات", src: "/quranMurattal.webp", srcDark: "/sunnah&hadith_dark.webp" },
