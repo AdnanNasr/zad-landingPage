@@ -1,8 +1,10 @@
 import {  Mail } from 'lucide-react';
 import { FaApple, FaGithub, FaFacebookF ,FaGooglePlay} from 'react-icons/fa';
-import { colors, links } from '../data/siteData';
+import { links } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
+  const { colors } = useTheme();
   return (
     <footer className="pt-16 pb-8" style={{ background: colors.primaryDark }}>
       <div className="max-w-6xl mx-auto px-6">

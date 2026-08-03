@@ -1,6 +1,8 @@
-import { colors, whyPoints } from '../data/siteData';
+import { whyPoints } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 export default function WhyZad() {
+  const { colors } = useTheme();
   return (
     <section id="why" className="py-20" style={{ background: colors.primary }}>
       <div className="max-w-6xl mx-auto px-6">

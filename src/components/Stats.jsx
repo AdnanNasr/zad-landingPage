@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { colors, stats } from '../data/siteData';
+import { stats } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 // بيفصل الرقم عن أي بادئة زي "+" عشان نقدر نعدّي عليه بالأنيميشن
 // ونرجّع نفس الشكل (+30, 7,563...) في الآخر
@@ -10,6 +11,7 @@ function parseStat(raw) {
 }
 
 export default function Stats() {
+  const { colors } = useTheme();
   const cardRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -57,7 +59,7 @@ export default function Stats() {
       ref={cardRef}
       className="max-w-5xl mx-auto md:-mt-12 rounded-3xl px-6 py-8 md:py-10"
       style={{
-        background: colors.bg,
+        background: colors.cardBg,
         boxShadow: '0 35px 70px -25px rgba(10,53,56,0.4), 0 0 0 1px rgba(23,107,112,0.08)',
       }}
     >
@@ -70,7 +72,7 @@ export default function Stats() {
                   {prefix}
                   {counts[i].toLocaleString('en-US')}
                 </div>
-                <div className="text-sm mt-1" style={{ color: '#666' }}>{s.label}</div>
+                <div className="text-sm mt-1" style={{ color: colors.textFaint }}>{s.label}</div>
               </div>
             );
           })}

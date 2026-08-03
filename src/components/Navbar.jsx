@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { colors, links } from '../data/siteData';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { links } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { id: 'features', label: 'المزايا' },
@@ -12,6 +13,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const { colors, isDark, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
 
@@ -63,13 +65,24 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href={links.playStore}
-          className="hidden md:inline-flex rounded-full px-5 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
-          style={{ background: colors.primary }}
-        >
-          تحميل التطبيق
-        </a>
+        <div className="hidden md:flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            aria-label={isDark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن'}
+            className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+            style={{ background: 'rgba(255,255,255,0.12)' }}
+          >
+            {isDark ? <Sun size={18} color="#fff" /> : <Moon size={18} color="#fff" />}
+          </button>
+
+          <a
+            href={links.playStore}
+            className="inline-flex rounded-full px-5 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
+            style={{ background: colors.primary }}
+          >
+            تحميل التطبيق
+          </a>
+        </div>
 
         <button className="md:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="القائمة">
           {menuOpen ? <X color="#fff" /> : <Menu color="#fff" />}
@@ -77,17 +90,25 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden flex flex-col gap-4 px-6 pb-5 text-sm font-semibold" style={{ color: colors.ink }}>
+        <div className="md:hidden flex flex-col gap-4 px-6 pb-5 text-sm font-semibold" style={{ color: colors.text, background: colors.cardBg }}>
           {navLinks.map((l) => (
             <a
               key={l.id}
               href={`#${l.id}`}
               onClick={() => setMenuOpen(false)}
-              style={{ color: active === l.id ? colors.secondary : colors.ink, fontWeight: active === l.id ? 800 : 600 }}
+              style={{ color: active === l.id ? colors.secondary : colors.text, fontWeight: active === l.id ? 800 : 600 }}
             >
               {l.label}
             </a>
           ))}
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center gap-2 rounded-full px-4 py-2 font-bold"
+            style={{ background: colors.pageBg, color: colors.text, border: `1px solid ${colors.border}` }}
+          >
+            {isDark ? <Sun size={16} /> : <Moon size={16} />}
+            {isDark ? 'الوضع الفاتح' : 'الوضع الداكن'}
+          </button>
           <a
             href={links.playStore}
             className="rounded-full px-4 py-2 text-center font-bold text-white"

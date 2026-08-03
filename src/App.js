@@ -11,10 +11,12 @@ import GithubSection from './components/Github';
 import FAQ from './components/FAQ';
 import DownloadCTA from './components/Download';
 import Footer from './components/Footer';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
+  const { colors } = useTheme();
   return(
-  <div>
+  <div style={{ backgroundColor: colors.pageBg, transition: 'background-color 0.3s ease' }}>
     {/* <Zad/> */}
     <Navbar/>
     <Hero/>
@@ -23,7 +25,7 @@ function App() {
     <Features/>
     <Screenshots/>
     <WhyZad/>
-    <div className="px-0 py-20 islamic-pattern"  style={{ backgroundColor: '#fff' }}>
+    <div className="px-0 py-20 islamic-pattern" style={{ backgroundColor: colors.pageBg }}>
     <MissionMessage/>
     <Privacy/>
     </div>

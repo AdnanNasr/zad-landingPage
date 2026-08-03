@@ -1,4 +1,5 @@
-import { colors, CheckCircle2 } from '../data/siteData';
+import { CheckCircle2 } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 import { ShieldCheck } from 'lucide-react';
 
 const privacyPoints = [
@@ -10,6 +11,7 @@ const privacyPoints = [
 ];
 
 export default function Privacy() {
+  const { colors } = useTheme();
   return (
     <section id="privacy" className="py-20">
       <div className="max-w-5xl mx-auto px-6">
@@ -41,7 +43,7 @@ export default function Privacy() {
                 key={i}
                 className="flex items-start gap-3 py-4"
                 style={{
-                  borderBottom: i < privacyPoints.length - 1 ? '1px solid #e5e0d0' : 'none',
+                  borderBottom: i < privacyPoints.length - 1 ? `1px solid ${colors.border}` : 'none',
                 }}
               >
                 <CheckCircle2
@@ -49,7 +51,7 @@ export default function Privacy() {
                   color={colors.primary}
                   className="mt-0.5 flex-shrink-0"
                 />
-                <p style={{ color: '#444' }}>{point}</p>
+                <p style={{ color: colors.text }}>{point}</p>
               </div>
             ))}
           </div>

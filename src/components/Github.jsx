@@ -1,22 +1,24 @@
 import { FaGithub } from 'react-icons/fa';
-import { colors, links } from '../data/siteData';
+import { links } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 import {ArrowUpLeft} from "lucide-react";
 
 export default function GithubSection() {
+  const { colors } = useTheme();
   return (
-    <section id="Github" className="py-20" style={{ background: colors.bg }}>
+    <section id="Github" className="py-20" style={{ background: colors.pageBg }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="text-sm font-bold" style={{ color: colors.secondary }}>مفتوح المصدر</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3" style={{ color: colors.primaryDark }}>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3" style={{ color: colors.text }}>
             شارك في تطوير زاد المسلم
           </h2>
         </div>
 
         <div
           className="rounded-3xl px-5 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative"
-          style={{ background: colors.primaryDark }}
+          style={{ background: colors.primary }}
         >
 
           <div className="flex flex-col md:flex-row items-center md:items-start justify-end gap-5 text-center md:text-right order-1 md:order-2">

@@ -1,7 +1,8 @@
 import { BookOpen, Clock, Heart, ScrollText, Compass, Volume2, WifiOff, BookMarked ,CheckCircle2 } from 'lucide-react';
 import { Gift, ShieldOff, Lock, Code2 } from 'lucide-react';
 
-export const colors = {
+// ألوان الوضع الفاتح (الافتراضي)
+export const lightColors = {
   primary: "#176B70",
   primaryDark: "#0A3538",
   primaryLight: "#2E8F94",
@@ -10,10 +11,43 @@ export const colors = {
   ink: "#1B1B1B",
   bg: "#FAFAF8",
   cream: "#EEF5F4",
+  // ألوان إضافية عشان الوضع الداكن يقدر يبدّلها بسهولة  
+  pageBg: "#FAFAF8",      
+  cardBg: "#ebf6ff",      
+  faqBg: "#F8F3E6",       
+  faqHover: "#FCF8EE",    
+  border: "#e5e0d0",      
+  faqBorder: "#DDD4BF",   
+  text: "#3a3a34",       
+  textMuted: "#555555",   
+  textFaint: "#666666",   
 };
 
+// ألوان الوضع الداكن
+export const darkColors = {
+  primary: "#2E8F94",
+  primaryDark: "#04100F",
+  primaryLight: "#176B70",
+  secondary: "#E7893B",
+  secondaryLight: "#F3C08A",
+  ink: "#0E0E0E",
+  bg: "#0B1E1F",
+  cream: "#0F2A2C",
+  pageBg: "#17383a",
+  cardBg: "#102B2D",
+  faqBg: "#0C2224",
+  faqHover: "#123234",
+  border: "#1E3B3D",
+  faqBorder: "#1E3B3D",
+  text: "#EDEAE0",
+  textMuted: "#B9C4C3",
+  textFaint: "#9AA6A5",
+};
+
+//  الوضع الفاتح افتراضيًا
+export const colors = lightColors;
+
 // رابط الموقع الرسمي — بيتقرا من ملف .env (REACT_APP_SITE_URL)
-// غيّريه من هناك مش هنا
 export const siteUrl = process.env.REACT_APP_SITE_URL || "https://zad-landing-pae-a83t.vercel.app";
 
 export const links = {
@@ -76,15 +110,15 @@ export const features = [
   },
 ];
 
+// صور الموقع light & dark
 export const screenshots = [
-  { title: "الصفحة الرئيسية", src: "/home_page.png" },
-  { title: "مواقيت الصلاة", src: "/pray_times.png" },
-  { title: "القرآن الكريم", src: "/quran_page.png" },
-  { title: "الأحاديث", src: "/hadith_page.png" },
-  { title: "القرآن المرتل والصوتيات", src: "/quran_voice_page.png" },
-  { title: "اتجاه القبلة", src: "/qibla_page.png" },
-  { title: "الإعدادات", src: "/settings_page.png" },
-  { title: "الوضع الداكن", src: "/home_page_darkmode_green_theme.png" },
+  { title: "الصفحة الرئيسية", src: "/home.webp", srcDark: "/home_dark.webp" },
+  { title: "مواقيت الصلاة", src: "/prayersTime.webp", srcDark: "/prayersTime_dark.webp" },
+  { title: "القرآن الكريم", src: "/quran.webp", srcDark: "/quran_dark.webp" },
+  { title: "الأحاديث", src: "/sunnah&hadith.webp", srcDark: "/sunnah&hadith_dark.webp" },
+  { title: "القرآن المرتل والصوتيات", src: "/quranMurattal.webp", srcDark: "/sunnah&hadith_dark.webp" },
+  { title: "اتجاه القبلة", src: "/qibla.webp", srcDark: "/qibla_dark.webp" },
+  { title: "الإعدادات", src: "/settings.webp", srcDark: "/settings_dark.webp" },
 ];
  
 export const whyPoints = [
@@ -94,10 +128,6 @@ export const whyPoints = [
   { icon: WifiOff, title: "يعمل دون إنترنت", desc: "معظم الأقسام متاحة بدون اتصال." },
   { icon: Code2, title: "مفتوح المصدر", desc: "الكود متاح للجميع على GitHub." },
 ];
-
-
-
-
 
 export const faqs = [
   { q: "هل التطبيق مجاني؟", a: "نعم، التطبيق مجاني بالكامل." },
@@ -109,6 +139,7 @@ export const faqs = [
   { q: "كيف يمكنني الإبلاغ عن مشكلة؟", a: "عبر مراسلة المطور من صفحة التطبيق في المتجر، أو إنشاء Issue في مستودع GitHub." },
 ];
 
+//qr code
 export const qrCodeSrc = "/qr-code.svg";  
 
 export {CheckCircle2};

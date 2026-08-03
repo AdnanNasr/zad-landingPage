@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { colors, features } from '../data/siteData';
+import { features } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 const container = {
   hidden: {},
@@ -13,21 +14,22 @@ const container = {
 const item = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 14,
   },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.45,
       ease: 'easeOut',
     },
   },
 };
 
 export default function Features() {
+  const { colors } = useTheme();
   return (
-    <section id="features" className="py-20" style={{ background: '#fff' }}>
+    <section id="features" className="py-20" style={{ background: colors.pageBg }}>
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center max-w-xl mx-auto mb-14">
@@ -57,9 +59,9 @@ export default function Features() {
             <motion.div
               key={i}
               variants={item}
-              className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-default"
+              className="rounded-2xl p-6 text-center transition-shadow duration-300 hover:shadow-lg cursor-default"
               style={{
-                background: colors.cream,
+                background: colors.cardBg,
                 border: `1px solid ${colors.primary}20`,
               }}
             >
@@ -77,7 +79,7 @@ export default function Features() {
                 {f.title}
               </h3>
 
-              <p className="text-sm" style={{ color: '#555' }}>
+              <p className="text-sm" style={{ color: colors.textMuted }}>
                 {f.desc}
               </p>
             </motion.div>

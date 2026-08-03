@@ -1,16 +1,6 @@
-/**
- * السكريبت ده بيقرا الدومين من ملف .env (REACT_APP_SITE_URL)
- * وبيحدّث ملفات robots.txt و sitemap.xml تلقائياً في مجلد public/
- * قبل ما تشغّل أو تبني المشروع.
- *
- * يعني الدومين بقى في مكان واحد بس: ملف .env
- * وأي تعديل هناك هيتطبق تلقائي على الملفين دول من غير ما تلمسهم يدوي.
- */
-
 const fs = require("fs");
 const path = require("path");
 
-// قراءة ملف .env يدوي (من غير الحاجة لباكدج إضافية)
 function loadEnv() {
   const envPath = path.join(__dirname, "..", ".env");
   if (!fs.existsSync(envPath)) return {};

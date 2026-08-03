@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { colors, faqs } from '../data/siteData';
+import { faqs } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
 export default function FAQ() {
+  const { colors } = useTheme();
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => {
@@ -13,7 +15,7 @@ export default function FAQ() {
     <section
       id="faq"
       className="py-24 islamic-pattern"
-      style={{ backgroundColor: '#F8F3E6' }}
+      style={{ backgroundColor: colors.faqBg }}
     >
       <div className="max-w-4xl mx-auto px-6">
 
@@ -38,11 +40,14 @@ export default function FAQ() {
           {faqs.map((item, i) => (
             <div
               key={i}
-              className="border-b border-[#DDD4BF]"
+              className="border-b"
+              style={{ borderColor: colors.faqBorder }}
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between py-7 text-right transition-all duration-200 hover:bg-[#FCF8EE]"
+                className="w-full flex items-center justify-between py-7 text-right transition-all duration-200"
+                onMouseEnter={(e) => (e.currentTarget.style.background = colors.faqHover)}
+                onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
               >
 
                 <span
@@ -77,7 +82,7 @@ export default function FAQ() {
               >
                 <p
                   className="text-base leading-8 pr-1"
-                  style={{ color: '#555' }}
+                  style={{ color: colors.textMuted }}
                 >
                   {item.a}
                 </p>

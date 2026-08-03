@@ -1,6 +1,8 @@
-import { colors, links, qrCodeSrc } from '../data/siteData';
+import { links, qrCodeSrc } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 import {FaGooglePlay} from "react-icons/fa"
 export default function DownloadCTA() {
+  const { colors } = useTheme();
   return (
     <section
       className="relative overflow-hidden py-24 text-center"
@@ -33,9 +35,9 @@ export default function DownloadCTA() {
           </h2>
 
           <p
-  className="mt-5 text-base leading-8 max-w-2xl mx-auto"
-  style={{ color: 'rgba(255,255,255,0.8)' }}
->
+            className="mt-5 text-base leading-8 max-w-2xl mx-auto"
+            style={{ color: 'rgba(255,255,255,0.8)' }}
+          >
   انضم إلى مستخدمي زاد المسلم، وابدأ رحلتك مع القرآن والذكر والصلاة اليوم.
 </p>
         </div>

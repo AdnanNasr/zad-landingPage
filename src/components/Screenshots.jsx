@@ -1,6 +1,9 @@
-import { colors, screenshots } from '../data/siteData';
+import { screenshots } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
-function PhoneFrame({ shot }) {
+function PhoneFrame({ shot, isDark }) {
+  // لو فيه صورة مخصصة للوضع الداكن نستخدمها، لو مفيش نفضل على الصورة العادية
+  const imgSrc = isDark && shot.srcDark ? shot.srcDark : shot.src;
   return (
     <div
       className="relative rounded-[34px] p-[10px]"
@@ -30,8 +33,8 @@ function PhoneFrame({ shot }) {
         className="relative rounded-[24px] overflow-hidden aspect-[9/19]"
         style={{ background: '#000' }}
       >
-        {shot.src ? (
-          <img src={shot.src} alt={shot.title} loading="lazy" className="w-full h-full object-contain" />
+        {imgSrc ? (
+          <img src={imgSrc} alt={shot.title} loading="lazy" className="w-full h-full object-contain" />
         ) : (
           <div
             className="w-full h-full flex items-center justify-center text-center text-xs p-3"
@@ -46,10 +49,11 @@ function PhoneFrame({ shot }) {
 }
 
 export default function Screenshots() {
+  const { colors, isDark } = useTheme();
   const loop = [...screenshots, ...screenshots, ...screenshots, ...screenshots];
 
   return (
-    <section id="screenshots" className="py-20 overflow-hidden" style={{ background: '#FAFAF8' }}>
+    <section id="screenshots" className="py-20 overflow-hidden" style={{ background: colors.pageBg }}>
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
@@ -71,7 +75,7 @@ export default function Screenshots() {
         <div className="shots-track flex gap-6 w-max">
           {loop.map((shot, i) => (
             <div key={i} className="flex-none w-40 md:w-56 lg:w-64">
-              <PhoneFrame shot={shot} />
+              <PhoneFrame shot={shot} isDark={isDark} />
             </div>
           ))}
         </div>

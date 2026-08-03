@@ -1,9 +1,10 @@
-import { colors } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 import { Info } from 'lucide-react';
 
 export default function IntroSection() {
+  const { colors } = useTheme();
   return (
-    <section className="py-20 islamic-pattern" style={{ backgroundColor: '#FAFAF8' }}>
+    <section className="py-20 islamic-pattern" style={{ backgroundColor: colors.pageBg }}>
       <div className="max-w-2xl mx-auto px-6 text-center">
         <div
           className="inline-flex items-center justify-center w-13 h-13 rounded-full mb-5 "
@@ -16,7 +17,7 @@ export default function IntroSection() {
           عن التطبيق
         </span>
 
-        <p className="text-lg leading-loose" style={{ color: '#3a3a34' }}>
+        <p className="text-lg leading-loose" style={{ color: colors.text }}>
           زاد المسلم يجمع بين{' '}
           <span style={{ fontFamily: "'Amiri', serif", fontWeight: 700, color: colors.primary }}>
             القرآن الكريم ، مواقيت الصلاة ، الاذكار ، السنة النبوية ، اتجاه القبلة 

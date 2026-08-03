@@ -1,7 +1,18 @@
 import { Clock, Volume2 } from 'lucide-react';
-import { colors, links } from '../data/siteData';
+import { links } from '../data/siteData';
+import { useTheme } from '../context/ThemeContext';
 
+const imgs=["/home_dark.webp" , "/home.webp"]
 export default function Hero() {
+  const { colors, isDark } = useTheme();
+
+  const heroImage = isDark ? imgs[0] : imgs[1];
+
+  // ألوان الكروت : في الوضع الفاتح كرت غامق وفي الوضع الداكن بتنعكس لكرت فاتح
+  const floatCardBg = isDark ? "#F5F1E8" : colors.ink;
+  const floatCardTitle = isDark ? "#8a8a7a" : "#bbbbad";
+  const floatCardText = isDark ? colors.ink : "#fff";
+
   return (
     <header id="hero" className="relative overflow-hidden"
     style={{ background: "radial-gradient(40% 40% at 10% 14%, " + colors.secondaryLight + "55 0%, rgba(0,0,0,0) 70%), linear-gradient(160deg, " + colors.primaryLight + " 0%, " + colors.primary + " 50%, " + colors.primaryDark + " 100%)" }}    >
@@ -101,7 +112,7 @@ export default function Hero() {
             style={{ background: "#0A1D1E", boxShadow: "0 40px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(23,107,112,0.25)" }}
           >
             <div className="w-full h-full rounded-3xl bg-white/10 flex items-center justify-center text-white/40 text-sm"style={{overflow:'hidden'}} >
-              <img src="/home_page.png" alt="زاد المسلم" className="w-full h-full object-cover" />
+              <img src={heroImage} alt="زاد المسلم" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -109,7 +120,7 @@ export default function Hero() {
           <div
             className="flex items-center gap-1.5 sm:gap-3 absolute -right-16 top-2 sm:-right-6 sm:top-10 rounded-lg sm:rounded-2xl px-2 py-1.5 sm:px-4 sm:py-3 z-20 max-w-[110px] sm:max-w-none"
             style={{
-              background: colors.ink,
+              background: floatCardBg,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
               animation: "floatCard 5s ease-in-out infinite",
             }}
@@ -122,8 +133,8 @@ export default function Hero() {
               <Clock size={16} className="hidden sm:block" color="#fff" />
             </div>
             <div className="text-right">
-              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: "#bbbbad" }}>الصلاة القادمة</div>
-              <div className="text-[10px] sm:text-sm font-black whitespace-nowrap" style={{ color: "#fff" }}>العصر · 04:41</div>
+              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: floatCardTitle }}>الصلاة القادمة</div>
+              <div className="text-[10px] sm:text-sm font-black whitespace-nowrap" style={{ color: floatCardText }}>العصر · 04:41</div>
             </div>
           </div>
 
@@ -131,7 +142,7 @@ export default function Hero() {
           <div
             className="flex items-center gap-1.5 sm:gap-3 absolute -left-16 bottom-6 sm:-left-8 sm:bottom-16 rounded-lg sm:rounded-2xl px-2 py-1.5 sm:px-4 sm:py-3 z-20 max-w-[110px] sm:max-w-none"
             style={{
-              background: colors.ink,
+              background: floatCardBg,
               boxShadow: "-14px 18px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
               animation: "floatCard 6s ease-in-out infinite 1.2s",
             }}
@@ -144,8 +155,8 @@ export default function Hero() {
               <Volume2 size={16} className="hidden sm:block" color="#fff" />
             </div>
             <div className="text-right min-w-0">
-              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: "#bbbbad" }}>قارئ نشط الآن</div>
-              <div className="text-[10px] sm:text-sm font-black " style={{ color: "#fff" }}>مشاري العفاسي</div>
+              <div className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap" style={{ color: floatCardTitle }}>قارئ نشط الآن</div>
+              <div className="text-[10px] sm:text-sm font-black " style={{ color: floatCardText }}>مشاري العفاسي</div>
             </div>
           </div>
         </div>
