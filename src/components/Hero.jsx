@@ -95,7 +95,7 @@ export default function Hero() {
           </a>
 
           <span className="block mt-3 text-xs" style={{ color: "rgba(251,246,236,0.55)" }}>
-            متاح لاجهزة Andriod وقريبا ios
+            متاح لاجهزة Android وقريبا IOS
           </span>
         </div>
 
