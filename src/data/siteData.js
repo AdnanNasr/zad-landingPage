@@ -50,7 +50,7 @@ export const darkColors = {
 export const colors = lightColors;
 
 // رابط الموقع الرسمي — بيتقرا من ملف .env (REACT_APP_SITE_URL)
-export const siteUrl = process.env.REACT_APP_SITE_URL || "https://zad-landing-pae-a83t.vercel.app";
+export const siteUrl = process.env.REACT_APP_SITE_URL || "https://zad_al_muslim.adnandev.cloud";
 
 export const links = {
   playStore: "https://play.google.com/store/apps/details?id=com.zad_al_muslim.adnan",
