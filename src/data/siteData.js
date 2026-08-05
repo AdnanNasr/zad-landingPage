@@ -66,7 +66,7 @@ export const stats = [
   { number: "7,563", label: "حديثًا" },
   { number: "+30", label: "قارئًا" },
   { number: "5", label: "إصدارات" },
-  { number: "+70", label: "مستخدمًا" },
+  { number: "+90", label: "مستخدمًا" },
 ];
 
 export const features = [
