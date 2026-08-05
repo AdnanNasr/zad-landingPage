@@ -61,7 +61,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Docker deployment
+
+Build and start the production container locally or on a VPS:
+
+```bash
+docker compose up -d --build
+```
+
+The website will be available on port `8080`. Put your VPS reverse proxy
+(Nginx, Caddy, Traefik, or your hosting panel) in front of
+`http://127.0.0.1:8080` to connect the domain and enable HTTPS.
+
+Useful commands:
+
+```bash
+docker compose ps
+docker compose logs -f web
+docker compose down
+```
+
+To publish the image to a registry instead, build and tag it with your registry
+address, push it, then deploy it with container port `80` exposed.
+
+### Create React App deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
