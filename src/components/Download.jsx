@@ -57,7 +57,7 @@ export default function DownloadCTA() {
               boxShadow: ` 0 12px 35px ${colors.secondary}55`,
             }}
           >
-            <FaGooglePlay size={24} /> {t.common.googlePlay}
+            <FaGooglePlay size={24} /> {"\u00A0"} {t.common.googlePlay}
           </a>
 
           {/* QR */}
