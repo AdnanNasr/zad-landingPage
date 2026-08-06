@@ -1,5 +1,6 @@
-import { screenshots } from '../data/siteData';
+import { screenshotImages } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 function PhoneFrame({ shot, isDark }) {
   // لو فيه صورة مخصصة للوضع الداكن نستخدمها، لو مفيش نفضل على الصورة العادية
@@ -50,6 +51,8 @@ function PhoneFrame({ shot, isDark }) {
 
 export default function Screenshots() {
   const { colors, isDark } = useTheme();
+  const { translations: t } = useLanguage();
+  const screenshots = screenshotImages.map((shot, index) => ({ ...shot, title: t.screenshots.items[index] }));
   const loop = [...screenshots, ...screenshots, ...screenshots, ...screenshots];
 
   return (
@@ -66,8 +69,8 @@ export default function Screenshots() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-sm font-bold" style={{ color: colors.secondary }}>لمحة من الداخل</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3" style={{ color: colors.primary }}>شكل التطبيق</h2>
+          <span className="text-sm font-bold" style={{ color: colors.secondary }}>{t.screenshots.label}</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3" style={{ color: colors.primary }}>{t.screenshots.title}</h2>
         </div>
       </div>
 

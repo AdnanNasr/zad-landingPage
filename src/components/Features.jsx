@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { features } from '../data/siteData';
+import { featureIcons } from '../data/siteData';
+import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
 const container = {
@@ -28,6 +29,7 @@ const item = {
 
 export default function Features() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
   return (
     <section id="features" className="py-20" style={{ background: colors.pageBg }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -37,14 +39,14 @@ export default function Features() {
             className="text-sm font-bold"
             style={{ color: colors.secondary }}
           >
-            المزايا
+            {t.features.label}
           </span>
 
           <h2
             className="text-3xl md:text-4xl font-bold mt-3"
             style={{ color: colors.primary }}
           >
-            كل ما تحتاجه في مكان واحد
+            {t.features.title}
           </h2>
         </div>
 
@@ -55,7 +57,9 @@ export default function Features() {
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {features.map((f, i) => (
+          {t.features.items.map((f, i) => {
+            const Icon = featureIcons[i];
+            return (
             <motion.div
               key={i}
               variants={item}
@@ -69,7 +73,7 @@ export default function Features() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
                 style={{ background: colors.primary }}
               >
-                <f.icon size={33} color="#fff" />
+                <Icon size={33} color="#fff" />
               </div>
 
               <h3
@@ -83,7 +87,7 @@ export default function Features() {
                 {f.desc}
               </p>
             </motion.div>
-          ))}
+          )})}
         </motion.div>
 
       </div>

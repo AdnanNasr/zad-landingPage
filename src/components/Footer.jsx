@@ -2,22 +2,23 @@ import {  Mail } from 'lucide-react';
 import { FaApple, FaGithub, FaFacebookF ,FaGooglePlay} from 'react-icons/fa';
 import { links } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
   return (
     <footer className="pt-16 pb-8" style={{ background: colors.primaryDark }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Top */}
-        <div className="flex flex-col md:flex-row md:justify-between gap-10 text-center md:text-right">
+        <div className="flex flex-col md:flex-row md:justify-between gap-10 text-center directional-text">
 
           {/* About */}
           <div className="md:max-w-sm">
-            <h3 className="text-2xl font-bold text-white mb-3">زاد المسلم</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">{t.common.appName}</h3>
             <p className="text-white/70 leading-7 mb-6">
-              تطبيق يجمع بين القرآن الكريم والأذكار ومواقيت الصلاة
-              واتجاه القبلة في مكان واحد، مع احترام كامل لخصوصيتك.
+              {t.footer.description}
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-end gap-3">
@@ -37,7 +38,7 @@ export default function Footer() {
               >
                 <FaApple size={18} />
                 App Store
-                <span className="text-xs opacity-70">قريبًا</span>
+                <span className="text-xs opacity-70">{t.footer.soon}</span>
               </button>
             </div>
           </div>
@@ -45,12 +46,12 @@ export default function Footer() {
           {/* Links + Contact, close together, on the left */}
           <div className="flex justify-center md:justify-start gap-14">
             <div>
-              <h4 className="text-lg font-bold text-white mb-4">روابط</h4>
+              <h4 className="text-lg font-bold text-white mb-4">{t.footer.links}</h4>
               <div className="flex flex-col gap-3 text-white/70">
                 {[
                   { label: 'GitHub', href: links.github },
-                  { label: 'سياسة الخصوصية', href: links.privacy },
-                  { label: 'شروط الاستخدام', href: links.terms },
+                  { label: t.footer.privacy, href: links.privacy },
+                  { label: t.footer.terms, href: links.terms },
                 ].map((l) => (
                   <a
                     key={l.label}
@@ -68,7 +69,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-white mb-4">تواصل</h4>
+              <h4 className="text-lg font-bold text-white mb-4">{t.footer.contact}</h4>
               <div className="flex flex-col gap-3 text-white/70">
                 <a href={`mailto:${links.email}`} className="flex items-center gap-2 transition-colors duration-200 hover:text-white">
                   <Mail size={18} />
@@ -108,7 +109,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-white/50 text-sm text-center">
-            © 2026 زاد المسلم. جميع الحقوق محفوظة.
+            {t.footer.copyright}
           </p>
         </div>
 

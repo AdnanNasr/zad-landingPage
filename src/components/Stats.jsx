@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { stats } from '../data/siteData';
+import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
 function parseStat(raw) {
@@ -10,6 +10,8 @@ function parseStat(raw) {
 
 export default function Stats() {
   const { colors } = useTheme();
+  const { translations: t, language } = useLanguage();
+  const stats = t.stats;
   const cardRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -49,7 +51,7 @@ export default function Stats() {
 
     frameId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frameId);
-  }, [started]);
+  }, [started, stats]);
 
   return (
   <section className="relative z-20 px-6 py-16 md:py-0">
@@ -68,7 +70,7 @@ export default function Stats() {
               <div key={i}>
                 <div className="text-3xl md:text-4xl font-black" style={{ color: colors.primary }}>
                   {prefix}
-                  {counts[i].toLocaleString('en-US')}
+                  {counts[i].toLocaleString(language === 'ar' ? 'ar-EG' : 'en-US')}
                 </div>
                 <div className="text-sm mt-1" style={{ color: colors.textFaint }}>{s.label}</div>
               </div>

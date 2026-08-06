@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { faqs } from '../data/siteData';
+import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
 export default function FAQ() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => {
@@ -24,20 +25,20 @@ export default function FAQ() {
             className="text-sm font-bold tracking-wide"
             style={{ color: colors.secondary }}
           >
-            الأسئلة الشائعة
+            {t.faq.label}
           </span>
 
           <h2
             className="text-3xl md:text-4xl font-extrabold mt-4"
             style={{ color: colors.primary }}
           >
-            لديك سؤال؟
+            {t.faq.title}
           </h2>
         </div>
 
         <div >
 
-          {faqs.map((item, i) => (
+          {t.faq.items.map((item, i) => (
             <div
               key={i}
               className="border-b"
@@ -45,7 +46,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between py-7 text-right transition-all duration-200"
+                className="w-full flex items-center justify-between py-7 directional-text transition-all duration-200"
                 onMouseEnter={(e) => (e.currentTarget.style.background = colors.faqHover)}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
               >
@@ -81,7 +82,7 @@ export default function FAQ() {
                 }`}
               >
                 <p
-                  className="text-base leading-8 pr-1"
+                  className="text-base leading-8 px-1 directional-text"
                   style={{ color: colors.textMuted }}
                 >
                   {item.a}

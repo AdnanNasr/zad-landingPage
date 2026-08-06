@@ -1,19 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { links } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
-
-const navLinks = [
-  { id: 'features', label: 'المزايا' },
-  { id: 'screenshots', label: 'صور التطبيق' },
-  { id: 'why', label: 'لماذا زاد المسلم' },
-  { id: 'privacy', label: 'الخصوصية' },
-  { id: 'Github', label: 'المساهمة' },
-  { id: 'faq', label: 'الأسئلة الشائعة' },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
   const { colors, isDark, toggleTheme } = useTheme();
+  const { translations: t, toggleLanguage } = useLanguage();
+  const navLinks = useMemo(() => [
+    { id: 'features', label: t.nav.features }, { id: 'screenshots', label: t.nav.screenshots },
+    { id: 'why', label: t.nav.why }, { id: 'privacy', label: t.nav.privacy },
+    { id: 'Github', label: t.nav.github }, { id: 'faq', label: t.nav.faq },
+  ], [t]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
 
@@ -33,7 +31,7 @@ export default function Navbar() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [navLinks]);
 
   return (
     <nav
@@ -46,8 +44,8 @@ export default function Navbar() {
   className="flex items-center gap-2 text-xl font-bold transition-opacity hover:opacity-90"
   style={{ color: colors.secondary }}
 >
-  <img src="/logo 480x80.webp" alt="زاد المسلم" className="w-8 h-8 rounded-full" />
- <span>زاد المسلم</span> 
+  <img src="/logo 480x80.webp" alt={t.common.appName} className="w-8 h-8 rounded-full" />
+ <span>{t.common.appName}</span>
 </a>
 
         <div className="hidden md:flex gap-8 text-sm font-semibold">
@@ -66,9 +64,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
+          <button onClick={toggleLanguage} aria-label={t.common.switchLanguage} className="h-10 min-w-10 px-3 rounded-full font-bold text-white" style={{ background: 'rgba(255,255,255,0.12)' }}>
+            {t.common.languageShort}
+          </button>
           <button
             onClick={toggleTheme}
-            aria-label={isDark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن'}
+            aria-label={isDark ? t.common.enableLight : t.common.enableDark}
             className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
             style={{ background: 'rgba(255,255,255,0.12)' }}
           >
@@ -80,11 +81,11 @@ export default function Navbar() {
             className="inline-flex rounded-full px-5 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
             style={{ background: colors.primary }}
           >
-            تحميل التطبيق
+            {t.common.download}
           </a>
         </div>
 
-        <button className="md:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="القائمة">
+        <button className="md:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label={t.common.menu}>
           {menuOpen ? <X color="#fff" /> : <Menu color="#fff" />}
         </button>
       </div>
@@ -107,14 +108,17 @@ export default function Navbar() {
             style={{ background: colors.pageBg, color: colors.text, border: `1px solid ${colors.border}` }}
           >
             {isDark ? <Sun size={16} /> : <Moon size={16} />}
-            {isDark ? 'الوضع الفاتح' : 'الوضع الداكن'}
+            {isDark ? t.common.lightMode : t.common.darkMode}
+          </button>
+          <button onClick={toggleLanguage} className="rounded-full px-4 py-2 font-bold" style={{ background: colors.pageBg, color: colors.text, border: `1px solid ${colors.border}` }}>
+            {t.common.languageLabel}
           </button>
           <a
             href={links.playStore}
             className="rounded-full px-4 py-2 text-center font-bold text-white"
             style={{ background: colors.primary }}
           >
-            تحميل التطبيق
+            {t.common.download}
           </a>
         </div>
       )}

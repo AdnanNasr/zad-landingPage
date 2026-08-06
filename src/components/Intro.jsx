@@ -1,8 +1,10 @@
 import { useTheme } from "../context/ThemeContext";
 import { Info } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function IntroSection() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
   return (
     <section
       className="py-20 islamic-pattern"
@@ -20,11 +22,11 @@ export default function IntroSection() {
           className="block text-sm font-bold mb-4"
           style={{ color: colors.secondary }}
         >
-          عن التطبيق
+          {t.intro.label}
         </span>
 
         <p className="text-lg leading-loose" style={{ color: colors.text }}>
-          زاد المسلم يجمع بين{"  "} {"\u00A0"}
+          {t.intro.before}{" "}
           <span
             style={{
               fontFamily: "'Amiri', serif",
@@ -32,23 +34,18 @@ export default function IntroSection() {
               color: colors.primary,
             }}
           >
-            القرآن الكريم ، مواقيت الصلاة ، الاذكار ، السنة النبوية ، اتجاه
-            القبلة
+            {t.intro.highlight}
           </span>{" "}
           {"\u00A0"}
-          في تجربة واحدة صُممت لترافقك في كل لحظة من يومك. استمع إلى أكثر من{" "}
+          {" "}{t.intro.after}{" "}
           <span style={{ fontWeight: 700, color: colors.secondary }}>
-            30 قارئًا
+            {t.intro.readers}
           </span>
-          ، وحمّل السور أو المصحف كاملًا للاستماع{" "}
+          {t.intro.offlineBefore}{" "}
           <span style={{ fontWeight: 700, color: colors.secondary }}>
-            دون انترنت
+            {t.intro.offline}
           </span>
-          ، وتابع قراءتك من حيث توقفت بلمسة واحدة. احصل على مواقيت صلاة دقيقة مع
-          تنبيهات الأذان والعد التنازلي للصلاة القادمة، واستفد من الأذكار
-          اليومية وحصن المسلم، وتصفح الأحاديث النبوية بسهولة، مع بوصلة دقيقة
-          لتحديد اتجاه القبلة، والتاريخين الهجري والميلادي، وتشغيل التلاوات في
-          الخلفية مع التحكم بها مباشرة من الإشعارات وشاشة القفل.
+          {t.intro.rest}
         </p>
       </div>
     </section>

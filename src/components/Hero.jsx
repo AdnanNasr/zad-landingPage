@@ -1,10 +1,12 @@
 import { Clock, Volume2 } from "lucide-react";
 import { links } from "../data/siteData";
 import { useTheme } from "../context/ThemeContext";
+import { useLanguage } from "../context/LanguageContext";
 
 const imgs = ["/home_dark.webp", "/home.webp"];
 export default function Hero() {
   const { colors, isDark } = useTheme();
+  const { translations: t } = useLanguage();
 
   const heroImage = isDark ? imgs[0] : imgs[1];
 
@@ -103,7 +105,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-10 md:pt-32 md:pb-16 grid md:grid-cols-2 gap-6 md:gap-10 items-center text-center md:text-right relative z-10">
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-10 md:pt-32 md:pb-16 grid md:grid-cols-2 gap-6 md:gap-10 items-center text-center directional-text relative z-10">
         <div>
           <span
             className="inline-block text-sm font-bold mb-4 px-4 py-1 rounded-full"
@@ -112,25 +114,22 @@ export default function Hero() {
               color: colors.secondary,
             }}
           >
-            زاد المسلم
+            {t.common.appName}
           </span>
 
           <h1
             className="text-4xl md:text-5xl font-bold mb-5 leading-tight"
             style={{ fontFamily: "'Cairo', serif", color: colors.bg }}
           >
-            كل ما يحتاجه{" "}
-            <span style={{ color: colors.secondary }}> المسلم</span>
-            <br></br>في مكان واحد
+            {t.hero.titleBefore}{" "}<span style={{ color: colors.secondary }}>{t.hero.titleAccent}</span>
+            <br />{t.hero.titleAfter}
           </h1>
 
           <p
             className="text-lg mb-8 max-w-md mx-auto md:mx-0"
             style={{ color: "rgba(251,246,236,0.78)" }}
           >
-            زاد المسلم يجمع بين القرآن الكريم، مواقيت الصلاة، الأذكار، السنة
-            النبوية، واتجاه القبلة في تجربة واحدة صُممت لترافقك في كل لحظة من
-            يومك
+            {t.hero.description}
           </p>
 
           <a
@@ -142,14 +141,14 @@ export default function Hero() {
               boxShadow: "0 12px 30px -10px rgba(231,137,59,0.5)",
             }}
           >
-            حمّل التطبيق الآن مجانًا
+            {t.hero.cta}
           </a>
 
           <span
             className="block mt-3 text-xs"
             style={{ color: "rgba(251,246,236,0.55)" }}
           >
-            متاح لاجهزة Android وقريبا IOS
+            {t.hero.availability}
           </span>
         </div>
 
@@ -175,7 +174,7 @@ export default function Hero() {
             >
               <img
                 src={heroImage}
-                alt="زاد المسلم"
+                alt={t.hero.imageAlt}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -198,18 +197,18 @@ export default function Hero() {
               <Clock size={10} className="sm:hidden" color="#fff" />
               <Clock size={16} className="hidden sm:block" color="#fff" />
             </div>
-            <div className="text-right">
+            <div className="directional-text">
               <div
                 className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap"
                 style={{ color: floatCardTitle }}
               >
-                الصلاة القادمة
+                {t.hero.nextPrayer}
               </div>
               <div
                 className="text-[10px] sm:text-sm font-black whitespace-nowrap"
                 style={{ color: floatCardText }}
               >
-                العصر · 04:41
+                {t.hero.prayer}
               </div>
             </div>
           </div>
@@ -231,18 +230,18 @@ export default function Hero() {
               <Volume2 size={10} className="sm:hidden" color="#fff" />
               <Volume2 size={16} className="hidden sm:block" color="#fff" />
             </div>
-            <div className="text-right min-w-0">
+            <div className="directional-text min-w-0">
               <div
                 className="text-[7px] sm:text-[11px] font-bold whitespace-nowrap"
                 style={{ color: floatCardTitle }}
               >
-                قارئ نشط الآن
+                {t.hero.activeReciter}
               </div>
               <div
                 className="text-[10px] sm:text-sm font-black "
                 style={{ color: floatCardText }}
               >
-                مشاري العفاسي
+                {t.hero.reciter}
               </div>
             </div>
           </div>

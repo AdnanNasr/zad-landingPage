@@ -1,8 +1,10 @@
 import { links, qrCodeSrc } from "../data/siteData";
 import { useTheme } from "../context/ThemeContext";
 import { FaGooglePlay } from "react-icons/fa";
+import { useLanguage } from "../context/LanguageContext";
 export default function DownloadCTA() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
   return (
     <section
       className="relative overflow-hidden py-24 text-center"
@@ -26,19 +28,18 @@ export default function DownloadCTA() {
             className="text-sm font-semibold"
             style={{ color: colors.secondary }}
           >
-            ابدأ الآن
+            {t.download.label}
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-5 leading-tight">
-            زادك اليومي على بُعد تحميل واحد
+            {t.download.title}
           </h2>
 
           <p
             className="mt-5 text-base leading-8 max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.8)" }}
           >
-            انضم إلى مستخدمي زاد المسلم، وابدأ رحلتك مع القرآن والذكر والصلاة
-            اليوم.
+            {t.download.description}
           </p>
         </div>
 
@@ -56,7 +57,7 @@ export default function DownloadCTA() {
               boxShadow: ` 0 12px 35px ${colors.secondary}55`,
             }}
           >
-            <FaGooglePlay size={24} /> {"\u00A0"} حمّل من Google Play
+            <FaGooglePlay size={24} /> {t.common.googlePlay}
           </a>
 
           {/* QR */}
@@ -65,13 +66,13 @@ export default function DownloadCTA() {
               <div className="bg-white rounded-3xl p-3 shadow-xl">
                 <img
                   src={qrCodeSrc}
-                  alt="امسح لتحميل زاد المسلم"
+                  alt={t.download.qrAlt}
                   className="w-28 h-28"
                 />
               </div>
 
               <span className="text-white/60 text-sm mt-3">
-                امسح للتحميل المباشر
+                {t.download.qrCaption}
               </span>
             </div>
           )}

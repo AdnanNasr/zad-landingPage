@@ -1,30 +1,25 @@
 import { CheckCircle2 } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
 import { ShieldCheck } from 'lucide-react';
-
-const privacyPoints = [
-  "لا يجمع التطبيق أي بيانات عن المستخدمين.",
-  "إذن الموقع يُستخدم فقط لحساب مواقيت الصلاة وتحديد اتجاه القبلة.",
-  "الإنترنت مطلوب مرة واحدة لجلب مدينتك، وبعدها تعمل المواقيت محليًا.",
-  "الإنترنت مطلوب أيضًا عند تنزيل التفاسير أو تحميل التلاوات للاستماع دون اتصال.",
-  "معظم أقسام التطبيق تعمل بالكامل دون إنترنت.",
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Privacy() {
   const { colors } = useTheme();
+  const { translations: t } = useLanguage();
+  const privacyPoints = t.privacy.items;
   return (
     <section id="privacy" className="py-20">
       <div className="max-w-5xl mx-auto px-6">
 
         <div className="text-center mb-10">
           <span className="text-sm font-bold" style={{ color: colors.secondary }}>
-            الخصوصية والأذونات
+            {t.privacy.label}
           </span>
           <h2
             className="text-3xl md:text-4xl font-bold mt-3"
             style={{ color: colors.primary }}
           >
-            نحن نحترم خصوصيتك
+            {t.privacy.title}
           </h2>
         </div>
 
