@@ -22,6 +22,8 @@ export const lightColors = {
   textMuted: "#555555",   
   textFaint: "#666666",   
   sectionAccentBg:"#176B70",
+  missionText: "#176B70",
+  downloadNow: "#a5bdbd"
 };
 
 // ألوان الوضع الداكن
@@ -44,6 +46,8 @@ export const darkColors = {
   textMuted: "#B9C4C3",
   textFaint: "#9AA6A5",
   sectionAccentBg:"#17383a",
+  missionText: "#EDEAE0",
+  downloadNow: "#a5bdbd"
 };
 
 //  الوضع الفاتح افتراضيًا

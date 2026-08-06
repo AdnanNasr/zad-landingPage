@@ -1,6 +1,6 @@
-import { links, qrCodeSrc } from '../data/siteData';
-import { useTheme } from '../context/ThemeContext';
-import {FaGooglePlay} from "react-icons/fa"
+import { links, qrCodeSrc } from "../data/siteData";
+import { useTheme } from "../context/ThemeContext";
+import { FaGooglePlay } from "react-icons/fa";
 export default function DownloadCTA() {
   const { colors } = useTheme();
   return (
@@ -20,7 +20,6 @@ export default function DownloadCTA() {
       />
 
       <div className="relative max-w-3xl mx-auto px-6">
-
         {/* Title */}
         <div className="mb-5">
           <span
@@ -36,15 +35,15 @@ export default function DownloadCTA() {
 
           <p
             className="mt-5 text-base leading-8 max-w-2xl mx-auto"
-            style={{ color: 'rgba(255,255,255,0.8)' }}
+            style={{ color: "rgba(255,255,255,0.8)" }}
           >
-  انضم إلى مستخدمي زاد المسلم، وابدأ رحلتك مع القرآن والذكر والصلاة اليوم.
-</p>
+            انضم إلى مستخدمي زاد المسلم، وابدأ رحلتك مع القرآن والذكر والصلاة
+            اليوم.
+          </p>
         </div>
 
         {/* Download + QR */}
         <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-10">
-
           {/* Download Button */}
           <a
             href={links.playStore}
@@ -53,12 +52,11 @@ export default function DownloadCTA() {
             className="inline-flex items-center justify-center rounded-full px-10 py-4 text-lg font-bold transition-all duration-300 hover:scale-105"
             style={{
               background: colors.secondary,
-              color: colors.primary,
-              boxShadow:` 0 12px 35px ${colors.secondary}55`,
+              color: colors.primaryDark,
+              boxShadow: ` 0 12px 35px ${colors.secondary}55`,
             }}
           >
-            حمّل من Google Play {" "}
-            <FaGooglePlay size={24}/>
+            <FaGooglePlay size={24} /> {"\u00A0"} حمّل من Google Play
           </a>
 
           {/* QR */}
@@ -77,9 +75,7 @@ export default function DownloadCTA() {
               </span>
             </div>
           )}
-
         </div>
-
       </div>
     </section>
   );
