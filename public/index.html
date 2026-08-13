@@ -5,6 +5,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo%20192x192.png" />
 
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,20 +14,25 @@
     <meta name="theme-color" content="#176B70" />
 
     <!-- SEO -->
-    <title>زاد المسلم | القرآن الكريم، الأذكار، ومواقيت الصلاة</title>
+    <title>زاد المسلم | تطبيق القرآن والأذكار ومواقيت الصلاة</title>
 
     <meta
       name="description"
-      content="تطبيق إسلامي مجاني يجمع القرآن الكريم ومواقيت الصلاة والأذكار واتجاه القبلة، بدون إعلانات ودون جمع بيانات المستخدمين."
+      content="حمّل تطبيق زاد المسلم المجاني للأندرويد: القرآن الكريم والتفاسير والتلاوات، مواقيت الصلاة وتنبيهات الأذان، الأذكار وحصن المسلم، الأحاديث واتجاه القبلة، بلا إعلانات."
     />
 
     <meta
       name="keywords"
-      content="زاد المسلم, القرآن الكريم, مواقيت الصلاة, الأذكار, اتجاه القبلة, التفاسير, التلاوات, السنة النبوية, تطبيق إسلامي, تطبيق مسلم, Quran, Prayer Times, Azkar"
+      content="زاد المسلم, تطبيق زاد المسلم, تطبيق إسلامي, تطبيق مسلم, القرآن الكريم, تطبيق القرآن الكريم, قراءة القرآن, القرآن صوت, تلاوات القرآن, تفسير القرآن, مواقيت الصلاة, أوقات الصلاة, تنبيهات الأذان, الأذكار اليومية, أذكار الصباح والمساء, حصن المسلم, الأحاديث النبوية, السنة النبوية, اتجاه القبلة, بوصلة القبلة, تطبيق إسلامي بدون إعلانات, تطبيق إسلامي بدون إنترنت"
     />
 
     <meta name="author" content="Adnan Nasr" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="application-name" content="زاد المسلم" />
+    <meta name="apple-mobile-web-app-title" content="زاد المسلم" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="google-play-app" content="app-id=com.zad_al_muslim.adnan" />
 
     <link
       rel="canonical"
@@ -39,11 +45,11 @@
     <meta property="og:locale" content="ar_EG" />
     <meta
       property="og:title"
-      content="زاد المسلم | القرآن الكريم، الأذكار، ومواقيت الصلاة"
+      content="زاد المسلم | تطبيق القرآن والأذكار ومواقيت الصلاة"
     />
     <meta
       property="og:description"
-      content="تطبيق إسلامي مجاني يجمع القرآن الكريم، مواقيت الصلاة، الأذكار، اتجاه القبلة، التفاسير والتلاوات في مكان واحد."
+      content="حمّل تطبيق زاد المسلم المجاني للأندرويد: القرآن الكريم والتفاسير والتلاوات، مواقيت الصلاة وتنبيهات الأذان، الأذكار وحصن المسلم، الأحاديث واتجاه القبلة، بلا إعلانات."
     />
     <meta
       property="og:image"
@@ -51,6 +57,7 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="زاد المسلم - القرآن الكريم، مواقيت الصلاة، الأذكار واتجاه القبلة" />
     <meta
       property="og:url"
@@ -61,19 +68,20 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="زاد المسلم | القرآن الكريم، الأذكار، مواقيت الصلاة"
+      content="زاد المسلم | تطبيق القرآن والأذكار ومواقيت الصلاة"
     />
     <meta
       name="twitter:description"
-      content="تطبيق إسلامي مجاني يجمع القرآن الكريم، مواقيت الصلاة، الأذكار، واتجاه القبلة."
+      content="حمّل تطبيق زاد المسلم المجاني للأندرويد: القرآن والتفاسير والتلاوات، مواقيت الصلاة والأذان، الأذكار والأحاديث واتجاه القبلة، بلا إعلانات."
     />
     <meta
       name="twitter:image"
       content="%REACT_APP_SITE_URL%/og.png"
     />
+    <meta name="twitter:image:alt" content="تطبيق زاد المسلم للقرآن الكريم والأذكار ومواقيت الصلاة واتجاه القبلة" />
 
     <!-- Structured Data -->
-    <script type="application/ld+json">
+    <script id="application-schema" type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "MobileApplication",
@@ -83,6 +91,8 @@
         "applicationSubCategory": "Religion",
         "inLanguage": "ar",
         "url": "%REACT_APP_SITE_URL%/",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.zad_al_muslim.adnan",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.zad_al_muslim.adnan",
         "image": "%REACT_APP_SITE_URL%/og.png",
         "description": "تطبيق إسلامي مجاني يجمع القرآن الكريم، مواقيت الصلاة، الأذكار، اتجاه القبلة، التفاسير والتلاوات.",
         "offers": {
@@ -92,6 +102,8 @@
         }
       }
     </script>
+    <script id="faq-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ar","mainEntity":[{"@type":"Question","name":"هل التطبيق مجاني؟","acceptedAnswer":{"@type":"Answer","text":"نعم، التطبيق مجاني بالكامل."}},{"@type":"Question","name":"هل يحتوي على إعلانات؟","acceptedAnswer":{"@type":"Answer","text":"لا، التطبيق خالٍ تمامًا من الإعلانات."}},{"@type":"Question","name":"هل يعمل دون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"يعمل جزء كبير من التطبيق دون إنترنت، بينما تتطلب بعض العمليات مثل تنزيل التفاسير والتلاوات اتصالًا بالإنترنت."}},{"@type":"Question","name":"هل يجمع بيانات المستخدمين؟","acceptedAnswer":{"@type":"Answer","text":"لا، التطبيق لا يجمع أي بيانات عن المستخدمين."}}]}</script>
+    <script id="website-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"زاد المسلم","alternateName":"Zad Al-Muslim","url":"%REACT_APP_SITE_URL%/","inLanguage":["ar","en"]}</script>
 
     <!-- Fonts -->
     <link
@@ -104,7 +116,11 @@
   </head>
 
   <body>
-    <noscript>يرجى تفعيل JavaScript لاستخدام الموقع.</noscript>
+    <noscript>
+      <h1>زاد المسلم: تطبيق القرآن الكريم والأذكار ومواقيت الصلاة</h1>
+      <p>تطبيق إسلامي مجاني للأندرويد يضم القرآن الكريم والتفاسير والتلاوات، مواقيت الصلاة وتنبيهات الأذان، أذكار الصباح والمساء وحصن المسلم، الأحاديث النبوية، وبوصلة اتجاه القبلة. يعمل معظم المحتوى دون إنترنت، بلا إعلانات ودون جمع بيانات المستخدمين.</p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.zad_al_muslim.adnan">تحميل تطبيق زاد المسلم من Google Play</a></p>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>

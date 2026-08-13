@@ -46,6 +46,8 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggle(i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
                 className="w-full flex items-center justify-between py-7 directional-text transition-all duration-200"
                 onMouseEnter={(e) => (e.currentTarget.style.background = colors.faqHover)}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
@@ -75,6 +77,7 @@ export default function FAQ() {
               </button>
 
               <div
+                id={`faq-answer-${i}`}
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === i
                     ? 'max-h-48 pb-7'

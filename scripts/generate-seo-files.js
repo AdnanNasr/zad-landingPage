@@ -17,7 +17,7 @@ function loadEnv() {
 }
 
 const env = loadEnv();
-const rawUrl = env.REACT_APP_SITE_URL || "https://zad_al_muslim.adnandev.cloud";
+const rawUrl = env.REACT_APP_SITE_URL || "https://zad-al-muslim.adnandev.cloud";
 // إزالة أي سلاش زيادة في الآخر عشان ميتكررش
 const siteUrl = rawUrl.replace(/\/+$/, "");
 
